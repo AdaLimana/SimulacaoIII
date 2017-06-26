@@ -65,7 +65,7 @@ public class Principal {
         
         rr = new RoundRobin(listaClientes.getClientes(), atendente);
         
-        listaClientes.reiniciaClientes();//volta tempoAtendimentoAtual dos clientes para o valor de tempoAtendimento, pois a mesma foi zerada no RounRobin
+        listaClientes.reiniciaClientes();
         
         
     }
