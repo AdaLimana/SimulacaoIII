@@ -3,16 +3,12 @@ package SimulacaoIII;
 public class Atendente {
 
     private Cliente atendido;//cliente que estah sendo atendido
-    //private char estado;//estado do atendente (O) ocupado ou (L) livre
     private int quantum;//fatia dde tempo de atendimento
-    //private int tempoOcupacao;
-    
+        
     public Atendente(int quantum) {
-        //estado = 'L';
         this.quantum = quantum;
-        //tempoOcupacao = 0;
         atendido = null;
-    }
+    } 
     
     /*
         faz o atendimento pelo tempo definido pelo quantum
@@ -25,13 +21,11 @@ public class Atendente {
         
         if(atendido.getTempoAtendimentoAtual() < quantum){
             tempoSis = tempoSis + atendido.getTempoAtendimentoAtual();
-            //tempoOcupacao = tempoOcupacao + atendido.getTempoAtendimentoAtual();
             atendido.setTempoAtendimentoAtual(0);
              
         }
         else{
             tempoSis = tempoSis + quantum;
-            //tempoOcupacao = tempoOcupacao + quantum;
             atendido.atualizaTempoAtendimentoAtual(quantum);
         }
         return tempoSis;
@@ -67,16 +61,5 @@ public class Atendente {
     public Cliente getAtendido() {
         return atendido;
     }
-
-    /*public char getEstado() {
-        return estado;
-    }*/
-
-    //public int getTempoOcupacao() {
-        //return tempoOcupacao;
-    //}
-    
-    
-    
     
 }

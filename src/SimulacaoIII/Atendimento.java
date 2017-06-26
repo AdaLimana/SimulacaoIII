@@ -64,9 +64,10 @@ public abstract class Atendimento {
     a lista de clientes*/
     public ArrayList<Cliente> getClientes(){return clientes;}
     
-    /*Metodo responsavel por setar
-    os demais atributos restantes
-    dos clientes*/
+    /*Metodo Abstrato responsavel por
+    setar os demais atributos restantes
+    dos clientes, quem extender esta
+    classe devera implementah-lo*/
     public abstract void atendimento();
     
     public void geraEstatistica(){
