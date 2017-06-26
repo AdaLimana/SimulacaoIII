@@ -4,7 +4,7 @@ Este código foi desenvolvido como um trabalho referente à disciplina de Simula
 
 *FIFO - first in first out;
 
-*LIFO - lest in first out;
+*LIFO - last in first out;
 
 *Por prioridade (Nao Preemptivvo e Preemptivo) - 10% dos clientes tem prioridade 1, 20% prioridade 2, 30% prioridade 3 e 40% 4;e
 
