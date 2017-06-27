@@ -106,10 +106,11 @@ public abstract class Atendimento {
         
         System.out.printf("\n# ID = %3d # TCH = %3d # TINA = %3d # TAT = %3d # TAA = %3d # TSA = %3d # TES = %3d # P = %3d #", c.getId(), c.getTempoChegadaSistema(),c.getTempoInicioAtendimento(), c.getTempoAtendimento(), c.getTempoAtendimentoAtual(), c.getTempoSaidaAtendimento(), c.getTempoEspera(), c.getPrioridade());
         
-        System.out.printf("\n###############################################################################################");
+        
     }
     
     public void mostraEstatistica(){
+        System.out.printf("\n###############################################################################################");
         System.out.printf("\nTempo Ocioso = %d\n"
                         + "Tempo total de espera em fila = %d\n"
                         + "Tempo medio de espera em fila = %f\n"

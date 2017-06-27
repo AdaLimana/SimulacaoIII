@@ -66,7 +66,7 @@ public class Preemptivo extends Atendimento {
                     }
                 
                     transicao = fila.get(indiceMaiorPrioridade);
-                    if(atendido.getPrioridade() < transicao.getPrioridade()){//se a prioridade do que esta sendo atendido for menor que a de um cliente da fila
+                    if(atendido.getPrioridade() > transicao.getPrioridade()){//se a prioridade do que esta sendo atendido for menor(obs quanto menor o numero maior a prioridade) que a de um cliente da fila
                         atendido.setTempoSaidaAtendimento(super.getTempoSistema());
                         mostraAtendimento(atendido);
                         fila.add(atendido);
@@ -128,7 +128,7 @@ public class Preemptivo extends Atendimento {
         while(i < fila.size()){
             aux = fila.get(i);
             
-            if(maior.getPrioridade() < aux.getPrioridade() ){
+            if(maior.getPrioridade() > aux.getPrioridade() ){
             
                 maior = aux;
                 indiceMaior = i;

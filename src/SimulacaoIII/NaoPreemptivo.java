@@ -91,7 +91,7 @@ public class NaoPreemptivo extends Atendimento{
         while(i < fila.size()){
             aux = fila.get(i);
             
-            if(maior.getPrioridade() < aux.getPrioridade() ){
+            if(maior.getPrioridade() > aux.getPrioridade() ){
             
                 maior = aux;
                 indiceMaior = i;
