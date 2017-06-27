@@ -28,14 +28,7 @@ public class RoundRobin extends Atendimento {
         Cliente transicao;
         Cliente atendido;
         
-        transicao = clientes.get(0);/*O primeiro é tratado diferente dos outros clientes.*/
-        transicao.setTempoEspera(0);/*tempo de espera, do primeiro cliente, é 0, pois sendo o primeiro, o mesmo não precisou esperar*/
-        transicao.setTempoInicioAtendimento(transicao.getTempoChegadaSistema());/*Assim que ele entra no sistema já é atendido, por isso o tempo de chegada e entrada são os mesmos*/
-        super.incrementaOcioso(transicao.getTempoChegadaSistema() - super.getTempoSistema());
-        super.setTempoSistema(transicao.getTempoChegadaSistema());
-        super.setTempoSistema(atendente.atendimentoComQuantum(transicao, super.getTempoSistema()));
-        
-        int i = 1;
+        int i = 0;
         while(true){// i < clientes.size() || !fila.isEmpty()
            
             if(i < clientes.size()){
