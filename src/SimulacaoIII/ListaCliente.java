@@ -10,14 +10,17 @@ public class ListaCliente {
     private int quantidade;
     private int tempoAtendimentoInicial;/*sortea um numero para tempo de atenimento apartir desse valor*/
     private int tempoAtendimentoFinal;/*sortea um numero para tempo de atenimento ateh esse valor*/
-    
+    private int incremento;
+    private int iniciaEmZero;
     /*#############################CONSTRUTOR##################################*/
 
-    public ListaCliente(int quantidade, int tempoAtendimentoInicial, int tempoAtendimentoFinal) {
+    public ListaCliente(int quantidade, int tempoAtendimentoInicial, int tempoAtendimentoFinal, int incremento, int iniciaEmZero) {
         clientes = new ArrayList();
         this.quantidade = quantidade;
         this.tempoAtendimentoInicial = tempoAtendimentoInicial;
         this.tempoAtendimentoFinal = tempoAtendimentoFinal;
+        this.incremento = incremento;
+        this.iniciaEmZero = iniciaEmZero;
         geraClientes();
     }
     /*########################################################################*/
@@ -38,17 +41,27 @@ public class ListaCliente {
      */
     private void geraClientes() {
         Cliente cliente;
-        for(int i = 0; i < quantidade; i++){
+        int i = 0;
+        
+        if(iniciaEmZero > 0){//se o primeiro cliente inicia em zero
             cliente = new Cliente();
-            inicializaCliente(cliente);
+            inicializaCliente(cliente, 0);
             clientes.add(cliente);
+            i++;
+        }
+        while ( i < quantidade ){
+            cliente = new Cliente();
+            inicializaCliente(cliente, incremento);
+            clientes.add(cliente);
+            i++;
         }
         geraPrioridade();
     }
     
-    private void inicializaCliente(Cliente cliente){
+    
+    private void inicializaCliente(Cliente cliente, int incremento){
         
-        geraTempoCriacao(cliente);
+        geraTempoCriacao(cliente, incremento);
         geraTempoChegadaSistema(cliente);
         geraTempoAtendimento(cliente);
         cliente.reiniciaTempoAtendimentoAtual();
@@ -65,9 +78,9 @@ public class ListaCliente {
         }
     }
     
-    private void geraTempoCriacao(Cliente cliente){
+    private void geraTempoCriacao(Cliente cliente, int incremento){
     
-        cliente.setTempoCricao(5);/*o tempo de criacao de todos serah 5*/
+        cliente.setTempoCricao(incremento);/*o tempo de criacao de todos serah 5*/
     }
     
     private void geraTempoChegadaSistema(Cliente cliente){

@@ -13,6 +13,8 @@ public class Principal {
         int tempoMinimoAtendimento;
         int tempoMaximoAtendimento;
         int quantum;
+        int incremento;
+        int iniciaEmZero;
         
         Atendente atendente;
         
@@ -27,13 +29,19 @@ public class Principal {
         System.out.println("Informe a quantidade de clientes");
         qntCliente = input.nextInt();
     
+        System.out.println("Informe o valor de incremento (o intervalo de tempo de criacao entre os clientes)");
+        incremento = input.nextInt();
+        
+        System.out.println("O tempo de chegada do primeiro cliente deve ser ZERO? sim(1) nao(0)");
+        iniciaEmZero = input.nextInt();
+        
         System.out.println("Informe o tempo mihnimo de atendimento");
         tempoMinimoAtendimento = input.nextInt();
     
         System.out.println("Informe o tempo mahximo de atendimento");
         tempoMaximoAtendimento = input.nextInt();
         
-        listaClientes = new ListaCliente(qntCliente, tempoMinimoAtendimento, tempoMaximoAtendimento);
+        listaClientes = new ListaCliente(qntCliente, tempoMinimoAtendimento, tempoMaximoAtendimento, incremento, iniciaEmZero);
         
         ArrayList<Cliente> clientes = listaClientes.getClientes();
         
